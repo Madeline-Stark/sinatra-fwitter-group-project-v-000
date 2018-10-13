@@ -54,7 +54,7 @@ class TweetsController < ApplicationController
   end
 
   patch '/tweets/:id' do
-    @tweet = Tweet.find_by_id(params[:id]) #needs to be outside if statement for redirect to work
+    @tweet = Tweet.find_by_id(params[:id]) #needs to be outside if statement for redirect to work? or actually could just pass in params[:id]
     if !params["tweet"]["content"].empty?
       @tweet.content = params["tweet"]["content"]
       @tweet.save
